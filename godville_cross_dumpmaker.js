@@ -30,9 +30,13 @@
 			dump += cellWrapper;
 			dump += rowWrapper;
 			dump += '\n';
-		})
-		copy(dump);
-		message = dump + '\n\n Дамп кроссворда скопирован в буфер обмена';
+		});
+		if (typeof copy == 'function') {
+			copy(dump);
+			message = dump + '\n\n Дамп кроссворда скопирован в буфер обмена';
+		} else {
+			message = dump + '\n\n Выделите текст дампа кроссворда и скопируйте';
+		}
 	}
 	alert(message);
 })()
