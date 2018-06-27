@@ -2,6 +2,7 @@
 	var dump = (useBc) ? 'bc. ' : '';
 	var rowWrapper = (useBc) ? '' : '@';
 
+	// http://www.fileformat.info/info/unicode/block/index.htm
 	var cellWrapper = '|';
 	var txtBkg = '#';
 	var txtSpace = '+';
@@ -26,7 +27,7 @@
 					cellText = (opened.innerText) ? opened.innerText : txtSpace;
 				}
 				dump += cellText;
-			})
+			});
 			dump += cellWrapper;
 			dump += rowWrapper;
 			dump += '\n';
@@ -35,7 +36,7 @@
 			copy(dump);
 			message = dump + '\n\n Дамп кроссворда скопирован в буфер обмена';
 		} else {
-			message = dump + '\n\n Выделите текст дампа кроссворда и скопируйте';
+			message = dump + '\n\n Выделите дамп кроссворда и скопируйте';
 		}
 	}
 	alert(message);
